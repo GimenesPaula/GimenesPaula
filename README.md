@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @GimenesPaula
 - 👀 I’m interested in Data Science and Storytelling.
-- 🌱 I’m currently learning Phyton and Hadoop.
+- 🌱 I’m currently learning Phyton and  Machine Learning
 - 💞️ I’m looking to improve my skills and practice.
 - 📫 Reach me on Facebook.
 
