@@ -1,0 +1,10 @@
+Uma vez identificado um modelo, calcular importancia das variáveis com base na permutação.
+  a) ajustar ao modelo 
+    -  from sklearn.model_selection import train_test_split
+          train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=1)
+    -  from sklearn.ensemble import RandomForestRegressor
+          first_model = RandomForestRegressor(n_estimators=50, random_state=1).fit(train_X, train_y)
+  b) Permutação
+      -  import eli5
+      -  from eli5.sklearn import PermutationImportance
+          perm = PermutationImportance(first_model, random_state=1).fit(val_X, val_y)
