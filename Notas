@@ -16,7 +16,6 @@ Uma vez identificado um modelo, calcular importancia das variáveis com base na 
           perm = PermutationImportance(first_model, random_state=1).fit(val_X, val_y)
   c)Dependencia Parcial
       -  from sklearn.inspection import PartialDependenceDisplay
-          disp1 = PartialDependenceDisplay.from_estimator(tree_model, val_X, ['Goal Scored'])
           f_names = [('x1', 'x2')]
             disp4 = PartialDependenceDisplay.from_estimator(tree_model, val_X, f_names, ax=ax)
           fig, ax = plt.subplots(figsize=(8, 6))
