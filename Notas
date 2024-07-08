@@ -4,7 +4,21 @@ Uma vez identificado um modelo, calcular importancia das variáveis com base na 
           train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=1)
     -  from sklearn.ensemble import RandomForestRegressor
           first_model = RandomForestRegressor(n_estimators=50, random_state=1).fit(train_X, train_y)
+          rf_model = RandomForestClassifier(random_state=0).fit(train_X, train_y)
+    -  from sklearn.tree import DecisionTreeClassifier
+       from sklearn import tree import graphviz
+          tree_model = DecisionTreeClassifier(random_state=0, max_depth=5, min_samples_split=5).fit(train_X, train_y)
+          tree_graph = tree.export_graphviz(tree_model, out_file=None, feature_names=feature_names)
+          graphviz.Source(tree_graph)
   b) Permutação
       -  import eli5
       -  from eli5.sklearn import PermutationImportance
           perm = PermutationImportance(first_model, random_state=1).fit(val_X, val_y)
+  c)Dependencia Parcial
+      -  from sklearn.inspection import PartialDependenceDisplay
+          disp1 = PartialDependenceDisplay.from_estimator(tree_model, val_X, ['Goal Scored'])
+          f_names = [('x1', 'x2')]
+            disp4 = PartialDependenceDisplay.from_estimator(tree_model, val_X, f_names, ax=ax)
+          fig, ax = plt.subplots(figsize=(8, 6))
+          plt.show()
+  
